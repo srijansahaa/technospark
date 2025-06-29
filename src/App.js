@@ -20,26 +20,21 @@ const App = () => {
   };
 
   return (
-    <div className="app-background">
-      <div className="container">
-        <h1 className="heading">📰 TechnoSpark Newsroom</h1>
-        <div className="tiles">
+    <div className="app-bg">
+      <div className="news-container">
+        <h1 className="title">📰 Real or Fake?</h1>
+        <div className="grid">
           {headlines.map((item, index) => (
             <div
               key={index}
-              className={`tile ${revealed[index]
-                  ? item.isReal
-                    ? "real"
-                    : "fake"
-                  : ""
-                }`}
+              className={`card ${revealed[index] ? (item.isReal ? "real" : "fake") : ""}`}
               onClick={() => handleClick(index)}
             >
-              {item.text}
+              <p className="headline">{item.text}</p>
               {revealed[index] && (
-                <div className="status">
+                <span className={`badge ${item.isReal ? "real-badge" : "fake-badge"}`}>
                   {item.isReal ? "Real ✅" : "Fake ❌"}
-                </div>
+                </span>
               )}
             </div>
           ))}

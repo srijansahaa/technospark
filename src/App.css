@@ -1,70 +1,99 @@
-.app-background {
+/* Background animation */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+
+.app-bg {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5e1ff, #ffe1e1, #e1fff3);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: bgShift 12s ease infinite;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 2rem;
+  font-family: "Bitcount Grid Double", system-ui;
 }
 
-.container {
-  background-color: white;
-  padding: 2rem;
+/* Container */
+.news-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  padding: 3rem;
   width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.heading {
+/* Title */
+.title {
+  font-size: 2.5rem;
+  color: #000000;
   text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px #00000050;
 }
 
-.tiles {
+/* Grid */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-.tile {
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  padding: 1rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  font-size: 1rem;
-  font-weight: 500;
-  color: #4b2e2e;
-  transition: transform 0.2s, background-color 0.3s ease;
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 1.5rem;
   cursor: pointer;
+  color: #000000;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   position: relative;
+  min-height: 130px;
 }
 
-.tile:hover {
-  transform: scale(1.03);
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-.tile.real {
-  background-color: #d4edda;
-  color: #155724;
+.headline {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.tile.fake {
-  background-color: #f8d7da;
-  color: #721c24;
-}
-
-.status {
-  margin-top: 0.5rem;
+/* Badges */
+.badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  color: white;
   font-weight: bold;
-  font-size: 0.95rem;
 }
-  
-@keyframes gradientShift {
+
+.real-badge {
+  background-color: #28a745;
+}
+
+.fake-badge {
+  background-color: #dc3545;
+}
+
+/* Color highlight effect */
+.card.real {
+  background: rgba(40, 167, 69, 0.25);
+}
+
+.card.fake {
+  background: rgba(220, 53, 69, 0.25);
+}
+
+@keyframes bgShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
