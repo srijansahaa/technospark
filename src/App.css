@@ -1,0 +1,71 @@
+.app-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5e1ff, #ffe1e1, #e1fff3);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.tile {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b2e2e;
+  transition: transform 0.2s, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.tile:hover {
+  transform: scale(1.03);
+}
+
+.tile.real {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.tile.fake {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+  
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
