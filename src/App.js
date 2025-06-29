@@ -3,12 +3,12 @@ import "./App.css";
 
 const App = () => {
   const headlines = [
-    { text: "Aliens Land in Delhi, Ask for Masala Dosa", isReal: false },
-    { text: "India Launches Solar Power Satellite to Orbit", isReal: true },
-    { text: "Man Claims to Time Travel Using Only a Pressure Cooker", isReal: false },
-    { text: "New Parliament Building Inaugurated with Eco-Friendly Tech", isReal: true },
-    { text: "Cat Becomes Mayor of Small Town, Declares Nap Time Mandatory", isReal: false },
-    { text: "ISRO Successfully Tests Reusable Rocket System", isReal: true }
+    { text: "Dubai Announces Drone-Supported Floating Cinema Experience", isReal: false },
+    { text: "Woman with objects fetish marries Eiffel Tower", isReal: true },
+    { text: "TikTok Testing Dream Recording Feature Called 'SleepTok'", isReal: false },
+    { text: "Scientists create first synthetic embryos in lab without sperm or eggs", isReal: false },
+    { text: "Indian Man Sues Parents for Giving Birth to Him Without His Consent", isReal: true },
+    { text: "Scientists build mouse embryos without eggs or sperm in a world-first experiment", isReal: true }
   ];
 
   const [revealed, setRevealed] = useState(Array(headlines.length).fill(false));
@@ -27,13 +27,12 @@ const App = () => {
           {headlines.map((item, index) => (
             <div
               key={index}
-              className={`tile ${
-                revealed[index]
+              className={`tile ${revealed[index]
                   ? item.isReal
                     ? "real"
                     : "fake"
                   : ""
-              }`}
+                }`}
               onClick={() => handleClick(index)}
             >
               {item.text}
