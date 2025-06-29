@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="app-bg">
       <div className="news-container">
-        <h1 className="title">📰 Real or Fake?</h1>
+        <h1 className="title">📰 TechnoSpark Newsroom</h1>
         <div className="grid">
           {headlines.map((item, index) => (
             <div
